@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Buve — UGC Content Creator</title>
+    <meta name="description" content="UGC Content Creator especializada en Food, Beauty y Lifestyle. Contenido auténtico para marcas desde Barcelona. ES/CAT/IT.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mariabuve.com/">
+    <meta property="og:title" content="Maria Buve — UGC Content Creator">
+    <meta property="og:description" content="UGC Content Creator especializada en Food, Beauty y Lifestyle. Contenido auténtico para marcas desde Barcelona.">
+    <meta property="og:image" content="https://mariabuve.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mariabuve.com/">
+    <meta property="twitter:title" content="Maria Buve — UGC Content Creator">
+    <meta property="twitter:description" content="UGC Content Creator especializada en Food, Beauty y Lifestyle. Contenido auténtico para marcas desde Barcelona.">
+    <meta property="twitter:image" content="https://mariabuve.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+    
+    <style>
+        :root {
+            --bg: #fafafa;
+            --fg: #2a2a2a;
+            --muted: #6b6b6b;
+            --accent: #8b7355;
+            --soft: #f5f5f5;
+            --white: #ffffff;
+            --shadow: rgba(0,0,0,0.04);
+            --gradient: linear-gradient(135deg, #8b7355 0%, #a68b5b 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 50%, #e8e8e8 100%);
+            color: var(--fg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 196, 168, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 196, 168, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 196, 168, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        /* Headers use Cormorant Garamond (manuscrita elegante), body text uses Inter */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        p, span, div, a, button, input, textarea, select {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--fg);
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+        
+        .nav {
+            display: none;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--fg);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent);
+        }
+        
+        .cta-btn {
+            background: var(--fg);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(42, 42, 42, 0.2);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(42, 42, 42, 0.3);
+            background: var(--muted);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 50%, #e8e8e8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(212, 196, 168, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 196, 168, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(212, 196, 168, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 90%, rgba(212, 196, 168, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(212, 196, 168, 0.06) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--fg);
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+        
+        .badge {
+            background: var(--soft);
+            color: var(--fg);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 300;
+            font-size: 0.85rem;
+            border: 1px solid rgba(139, 115, 85, 0.15);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .badge:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(139, 115, 85, 0.2);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--fg);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--fg);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--fg);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section:nth-child(even) {
+            background: var(--soft);
+        }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #d4c4a8;
+            position: relative;
+            letter-spacing: 1px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        /* iPhone Mockup Component */
+        .iphone {
+            width: min(360px, 92vw);
+            aspect-ratio: 9/19.5;
+            border-radius: 48px;
+            padding: 14px;
+            background: #000;
+            position: relative;
+            box-shadow: 0 12px 40px rgba(0,0,0,.25);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .iphone video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 32px;
+        }
+        
+        .iphone .notch {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 22px;
+            background: #000;
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            z-index: 2;
+        }
+        
+        .playbtn {
+            position: absolute;
+            inset: auto 12px 12px auto;
+            background: rgba(255,255,255,.85);
+            border: none;
+            border-radius: 999px;
+            padding: .4rem .6rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        
+        .playbtn:hover {
+            background: rgba(255,255,255,1);
+            transform: scale(1.1);
+        }
+        
+        /* Samples Grid */
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .sample-item {
+            text-align: center;
+            background: var(--white);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .sample-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .sample-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--fg);
+        }
+        
+        .sample-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: var(--bg);
+            color: var(--muted);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .sample-metric {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--fg);
+        }
+        
+        .service-description {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--muted);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Process */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+        
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--fg);
+        }
+        
+        .step-description {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .result-item {
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            color: var(--muted);
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        .testimonials-slider {
+            position: relative;
+            overflow: hidden;
+            margin-top: 3rem;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            min-width: 100%;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        /* Brands */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .brand-item {
+            text-align: center;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-item:hover {
+            transform: translateY(-4px);
+        }
+        
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--muted);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+        
+        .brand-name {
+            font-weight: 600;
+            color: var(--fg);
+            margin-bottom: 0.5rem;
+        }
+        
+        .brand-type {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        
+        /* Why UGC */
+        .why-ugc {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-top: 3rem;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .why-ugc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .why-item {
+            text-align: center;
+        }
+        
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+        
+        .why-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--fg);
+        }
+        
+        .why-description {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .contact-email {
+            font-size: 1.25rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--fg);
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--bg);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .privacy-notice {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--fg);
+            color: var(--white);
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .footer-legal {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav {
+                display: block;
+            }
+            
+            .hero-buttons {
+                flex-direction: row;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* Focus styles for accessibility */
+        .cta-btn:focus,
+        .btn-primary:focus,
+        .btn-secondary:focus,
+        .playbtn:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">Maria Buve</a>
+            <a href="#contacto" class="cta-btn">Cuéntame tu idea</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Maria Buve</h1>
+            <p class="hero-subtitle">UGC Content Creator</p>
+            <p class="hero-description">Creadora de contenido honesto, auténtico que inspira, impacta y conecta desde una perspectiva estratégica y de alta calidad.</p>
+            <p class="hero-description" style="font-size: 1rem; margin-top: 1.5rem; font-style: italic;">Con más de 2M de visualizaciones, mi contenido conecta y convierte para las marcas.</p>
+            <div class="hero-buttons">
+                <a href="#muestras" class="btn-secondary">Ver mi trabajo</a>
+                <a href="#contacto" class="btn-primary">Cuéntame tu proyecto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <h2 class="section-title">Sobre mí</h2>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; align-items: start;">
+                <div style="background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); text-align: center;">
+                    <h3 style="font-size: 1.4rem; color: var(--fg); margin-bottom: 1.5rem; font-weight: 400;">Mi misión</h3>
+                    <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1rem;">
+                        Graduada en enfermería, MBA + Máster en IA y Project Management, con experiencia en el sector.
+                    </p>
+                    <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1rem;">
+                        Como creadora de contenido, mi misión es transmitir emociones y generar confianza, reforzar tu branding y crecimiento en redes.
+                    </p>
+                    <p style="color: var(--muted); line-height: 1.7;">
+                        Mi contenido conecta y convierte para las marcas.
+                    </p>
+                </div>
+                
+                <div style="background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); text-align: center;">
+                    <h3 style="font-size: 1.4rem; color: var(--fg); margin-bottom: 1.5rem; font-weight: 400;">Mi equipo creativo</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; color: var(--muted); font-size: 0.9rem;">
+                        <div>📱 iPhone 16</div>
+                        <div>💡 Foco Luz</div>
+                        <div>🎥 DJI Osmo 7P</div>
+                        <div>🎤 Micrófono</div>
+                        <div>📐 Trípode</div>
+                        <div>🐕 Bruna (Teckel)</div>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.8rem; margin-top: 1rem; font-style: italic;">Equipamiento profesional y mi teckel Bruna, que le encanta salir en los vídeos</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); text-align: center;">
+                    <h3 style="font-size: 1.4rem; color: var(--fg); margin-bottom: 1.5rem; font-weight: 400;">Idiomas</h3>
+                    <div style="color: var(--muted); font-size: 1.1rem; line-height: 2;">
+                        <div>Castellano</div>
+                        <div>Català</div>
+                        <div>Italiano</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Muestras Section -->
+    <section id="muestras" class="section">
+        <h2 class="section-title">Mi Trabajo</h2>
+        <div class="samples-grid">
+            <!-- TODO: REEMPLAZAR con videos reales -->
+            <div class="sample-item">
+                <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
+                    <div class="notch" aria-hidden="true"></div>
+                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                        <source src="https://drive.google.com/uc?export=download&id=1ABC123DEF456GHI789" type="video/mp4">
+                        <p>Tu navegador no soporta videos HTML5.</p>
+                    </video>
+                </div>
+            </div>
+
+            <div class="sample-item">
+                <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
+                    <div class="notch" aria-hidden="true"></div>
+                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                        <source src="https://drive.google.com/uc?export=download&id=1DEF456GHI789JKL012" type="video/mp4">
+                        <p>Tu navegador no soporta videos HTML5.</p>
+                    </video>
+                </div>
+            </div>
+
+            <div class="sample-item">
+                <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
+                    <div class="notch" aria-hidden="true"></div>
+                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                        <source src="https://drive.google.com/uc?export=download&id=1GHI789JKL012MNO345" type="video/mp4">
+                        <p>Tu navegador no soporta videos HTML5.</p>
+                    </video>
+                </div>
+            </div>
+
+            <div class="sample-item">
+                <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
+                    <div class="notch" aria-hidden="true"></div>
+                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                        <source src="https://drive.google.com/uc?export=download&id=1JKL012MNO345PQR678" type="video/mp4">
+                        <p>Tu navegador no soporta videos HTML5.</p>
+                    </video>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="section">
+        <h2 class="section-title">¿Qué hago?</h2>
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.3rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.7; font-style: italic;">
+                "Me adapto a la visión de tu marca para crear juntos algo único y diferente. Vídeos UGC, fotografía, voz en off, guiones, unboxings, ASMR, tutoriales y edición profesional."
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🎥</div>
+                    <h4 style="color: var(--fg); margin-bottom: 1rem; font-size: 1.3rem;">Reels dinámicos</h4>
+                    <p style="color: var(--muted); font-size: 0.95rem;">Piezas cortas y visuales que capturan la atención en Instagram y TikTok.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📸</div>
+                    <h4 style="color: var(--fg); margin-bottom: 1rem; font-size: 1.3rem;">Fotografía de producto</h4>
+                    <p style="color: var(--muted); font-size: 0.95rem;">Imágenes cuidadas para productos: luz, composición y detalle.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center;">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">✨</div>
+                    <h4 style="color: var(--fg); margin-bottom: 1rem; font-size: 1.3rem;">Lifestyle & bienestar</h4>
+                    <p style="color: var(--muted); font-size: 0.95rem;">Contenido natural que integra hábitos y estilo de vida de forma orgánica.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#contacto" class="btn-primary">Cuéntame tu proyecto</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Resultados Section -->
+    <section id="resultados" class="section">
+        <div class="results-grid">
+            <div class="result-item">
+                <div class="result-number">1.1M</div>
+                <div class="result-label">Instagram Views</div>
+            </div>
+            <div class="result-item">
+                <div class="result-number">1M</div>
+                <div class="result-label">TikTok Views</div>
+            </div>
+            <div class="result-item">
+                <div class="result-number">2.1M</div>
+                <div class="result-label">Total Views</div>
+            </div>
+            <div class="result-item">
+                <div class="result-number">100%</div>
+                <div class="result-label">Contenido Original</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Marcas Section -->
+    <section id="marcas" class="section">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Food & Beverage
+                </div>
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Beauty
+                </div>
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Fashion
+                </div>
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Lifestyle
+                </div>
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Tech
+                </div>
+                <div style="background: var(--white); padding: 1rem 2rem; border-radius: 25px; box-shadow: 0 3px 15px rgba(0,0,0,0.05); color: var(--muted); font-weight: 500; font-size: 0.9rem; border: 1px solid var(--soft);">
+                    Wellness
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="section">
+        <h2 class="section-title">Cuéntame tu proyecto</h2>
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center; padding: 2rem;">
+            <div style="background: var(--white); border-radius: 25px; padding: 4rem 3rem; box-shadow: 0 15px 50px rgba(0,0,0,0.08); margin-bottom: 3rem;">
+                <h3 style="font-size: 2rem; color: var(--fg); margin-bottom: 1.5rem; font-weight: 400;">¿Hacemos algo único?</h3>
+                <p style="font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; line-height: 1.7;">
+                    Cuéntame tu proyecto y trabajamos juntos para crear contenido que realmente conecte con tu audiencia.
+                </p>
+                <a href="mailto:ugc.mariabuve@gmail.com" style="display: inline-block; background: #d4c4a8; color: var(--white); padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(212, 196, 168, 0.4); transition: all 0.3s ease;">
+                    ugc.mariabuve@gmail.com
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://www.instagram.com/maria.buve/" class="social-link" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.tiktok.com/@maria.buve" class="social-link" target="_blank" rel="noopener">TikTok</a>
+            </div>
+            <p>&copy; 2025 Maria Buve. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <p>UGC Content Creator | Barcelona, España | ES/CAT/IT</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // iPhone video interactions
+        document.querySelectorAll('.iphone').forEach(iphone => {
+            const video = iphone.querySelector('video');
+            const playBtn = iphone.querySelector('.playbtn');
+            let isPlaying = false;
+
+            // Show first frame automatically
+            if (video) {
+                video.addEventListener('loadedmetadata', function() {
+                    video.currentTime = 0.1; // Go to first frame
+                });
+            }
+
+            // Play on hover/touch
+            iphone.addEventListener('mouseenter', () => {
+                if (video && !isPlaying) {
+                    video.play();
+                    isPlaying = true;
+                    if (playBtn) playBtn.textContent = '⏸';
+                }
+            });
+
+            iphone.addEventListener('mouseleave', () => {
+                if (video && isPlaying) {
+                    video.pause();
+                    video.currentTime = 0.1; // Return to first frame
+                    isPlaying = false;
+                    if (playBtn) playBtn.textContent = '▶︎';
+                }
+            });
+
+            // Touch events for mobile
+            iphone.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                if (video && !isPlaying) {
+                    video.play();
+                    isPlaying = true;
+                    playBtn.textContent = '⏸';
+                }
+            });
+
+            // Play button toggle
+            if (playBtn) {
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (isPlaying) {
+                        video.pause();
+                        video.currentTime = 0.1; // Return to first frame
+                        isPlaying = false;
+                        playBtn.textContent = '▶︎';
+                    } else {
+                        video.play();
+                        isPlaying = true;
+                        playBtn.textContent = '⏸';
+                    }
+                });
+            }
+        });
+
+        // Testimonials auto-slider
+        const testimonialsContainer = document.querySelector('.testimonials-container');
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentTestimonial = 0;
+        let isPaused = false;
+
+        function nextTestimonial() {
+            if (!isPaused) {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                testimonialsContainer.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+            }
+        }
+
+        // Auto-advance testimonials every 5 seconds
+        setInterval(nextTestimonial, 5000);
+
+        // Pause on hover
+        const testimonialsSlider = document.querySelector('.testimonials-slider');
+        testimonialsSlider.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        testimonialsSlider.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const nombre = formData.get('nombre');
+            const email = formData.get('email');
+            const marca = formData.get('marca');
+            const nicho = formData.get('nicho');
+            const mensaje = formData.get('mensaje');
+
+            // Create mailto link
+            const subject = `Nuevo contacto UGC - ${nombre}`;
+            const body = `Nombre: ${nombre}
+Email: ${email}
+Marca: ${marca || 'No especificada'}
+Nicho/Paquete: ${nicho || 'No especificado'}
+
+Mensaje:
+${mensaje}`;
+
+            const mailtoLink = `mailto:ugc.mariabuve@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de email. Si no se abre automáticamente, envía un email a ugc.mariabuve@gmail.com');
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(246, 239, 231, 0.98)';
+            } else {
+                header.style.background = 'rgba(246, 239, 231, 0.95)';
+            }
+        });
+    </script>
+
+    <!-- 
+    ========================================
+    GUÍA DE PERSONALIZACIÓN
+    ========================================
+    
+    CÓMO SUSTITUIR VÍDEOS Y POSTERS:
+    1. Reemplaza VIDEO_1.mp4, VIDEO_2.mp4, etc. con tus archivos de vídeo reales
+    2. Reemplaza POSTER_1.jpg, POSTER_2.jpg, etc. con tus imágenes poster reales
+    3. Asegúrate de que los vídeos tengan formato 9:16 (1080x1920px)
+    4. Los posters deben tener las mismas dimensiones para mejor calidad
+    
+    CÓMO CAMBIAR PALETA DE COLORES:
+    1. Modifica las variables CSS en :root:
+       - --bg: color de fondo principal
+       - --fg: color de texto principal  
+       - --muted: color de texto secundario
+       - --accent: color de acento (botones, enlaces)
+       - --white: color blanco
+       - --shadow: color de sombras
+    
+    CÓMO CAMBIAR TIPOGRAFÍA:
+    1. Modifica la propiedad font-family en el selector body
+    2. Puedes usar Google Fonts añadiendo el link en <head> y cambiando la fuente
+    3. Ejemplo: font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    
+    CÓMO OCULTAR SECCIONES:
+    1. Para ocultar la sección de servicios, añade display: none al selector #servicios
+    2. Para ocultar testimonios, añade display: none al selector #testimonios
+    3. Para ocultar marcas, añade display: none al selector #marcas
+    
+    CÓMO AÑADIR TRADUCCIÓN ITALIANA:
+    1. Crea un objeto translations.it con las traducciones
+    2. Añade un toggle de idioma en el header
+    3. Usa JavaScript para cambiar el contenido dinámicamente
+    
+    OPTIMIZACIONES ADICIONALES:
+    - Comprime las imágenes antes de subirlas
+    - Usa formatos modernos como WebP para mejor rendimiento
+    - Considera usar un CDN para los vídeos si son muy pesados
+    - Añade Google Analytics si necesitas tracking
+    -->
+</body>
+</html>
