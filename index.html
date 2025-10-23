@@ -270,6 +270,15 @@
         
         @media (max-width: 768px) {
             .hero-buttons {
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.8rem;
@@ -291,6 +300,13 @@
         }
         
         @media (max-width: 768px) {
+            .btn-primary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .btn-primary {
                 padding: 1rem 2rem;
                 font-size: 1rem;
@@ -318,6 +334,13 @@
         }
         
         @media (max-width: 768px) {
+            .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .btn-secondary {
                 padding: 1rem 2rem;
                 font-size: 1rem;
@@ -368,7 +391,7 @@
         
         /* iPhone Mockup Component */
         .iphone {
-            width: min(280px, 85vw);
+            width: min(320px, 90vw);
             aspect-ratio: 9/19.5;
             border-radius: 48px;
             padding: 14px;
@@ -381,7 +404,7 @@
         
         @media (max-width: 768px) {
             .iphone {
-                width: min(250px, 80vw);
+                width: min(280px, 85vw);
                 border-radius: 40px;
                 padding: 12px;
             }
@@ -389,7 +412,7 @@
         
         @media (max-width: 480px) {
             .iphone {
-                width: min(220px, 75vw);
+                width: min(250px, 80vw);
                 border-radius: 35px;
                 padding: 10px;
             }
@@ -436,25 +459,25 @@
         /* Samples Grid */
         .samples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
         
         @media (max-width: 768px) {
             .samples-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 0 0.5rem;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
             }
         }
         
         @media (max-width: 480px) {
             .samples-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
-                padding: 0 1rem;
+                gap: 1.5rem;
+                padding: 0 0.5rem;
             }
         }
         
@@ -462,7 +485,7 @@
             text-align: center;
             background: var(--white);
             border-radius: 25px;
-            padding: 2.5rem;
+            padding: 3rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border: 1px solid rgba(212, 175, 55, 0.1);
@@ -470,14 +493,14 @@
         
         @media (max-width: 768px) {
             .sample-item {
-                padding: 1.5rem;
+                padding: 2rem;
                 border-radius: 20px;
             }
         }
         
         @media (max-width: 480px) {
             .sample-item {
-                padding: 1rem;
+                padding: 1.5rem;
                 border-radius: 15px;
             }
         }
