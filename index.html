@@ -199,12 +199,19 @@
         }
         
         .hero h1 {
-            font-size: clamp(3.5rem, 7vw, 6rem);
+            font-size: clamp(2.5rem, 8vw, 6rem);
             font-weight: 300;
             line-height: 1.1;
             margin-bottom: 1rem;
             color: var(--fg);
             letter-spacing: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: clamp(2rem, 10vw, 4rem);
+                letter-spacing: 1px;
+            }
         }
         
         .hero-subtitle {
@@ -261,6 +268,14 @@
             justify-content: center;
         }
         
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+        }
+        
         .btn-primary {
             background: var(--gradient);
             color: var(--white);
@@ -273,6 +288,15 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .btn-primary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
         }
         
         .btn-primary:hover {
@@ -291,6 +315,15 @@
             border: 2px solid var(--fg);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+        }
+        
+        @media (max-width: 768px) {
+            .btn-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
         }
         
         .btn-secondary:hover {
@@ -335,7 +368,7 @@
         
         /* iPhone Mockup Component */
         .iphone {
-            width: min(360px, 92vw);
+            width: min(280px, 85vw);
             aspect-ratio: 9/19.5;
             border-radius: 48px;
             padding: 14px;
@@ -344,6 +377,22 @@
             box-shadow: 0 12px 40px rgba(0,0,0,.25);
             overflow: hidden;
             margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .iphone {
+                width: min(250px, 80vw);
+                border-radius: 40px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .iphone {
+                width: min(220px, 75vw);
+                border-radius: 35px;
+                padding: 10px;
+            }
         }
         
         .iphone video {
@@ -387,9 +436,26 @@
         /* Samples Grid */
         .samples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
+            padding: 0 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .samples-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 0 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .samples-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
         }
         
         .sample-item {
@@ -400,6 +466,42 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
             border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .sample-item {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .sample-item {
+                padding: 1rem;
+                border-radius: 15px;
+            }
+        }
+        
+        /* About Grid Responsive */
+        .about-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            gap: 3rem !important;
+            align-items: start !important;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
         }
         
         .sample-item:hover {
@@ -906,7 +1008,7 @@
     <section class="section">
         <h2 class="section-title">Sobre mí</h2>
         <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; align-items: start;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; align-items: start;" class="about-grid">
                 <div style="background: var(--white); padding: 3rem 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); text-align: center;">
                     <h3 style="font-size: 1.4rem; color: var(--fg); margin-bottom: 1.5rem; font-weight: 400;">Mi misión</h3>
                     <p style="color: var(--muted); line-height: 1.7; margin-bottom: 1rem;">
@@ -953,7 +1055,7 @@
             <div class="sample-item">
                 <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
                     <div class="notch" aria-hidden="true"></div>
-                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                    <video controls playsinline muted loop preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4c4a8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8d5c4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ccircle cx='200' cy='300' r='40' fill='%23ffffff' opacity='0.8'/%3E%3Cpolygon points='185,285 185,315 215,300' fill='%23d4c4a8'/%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
                         <source src="https://drive.google.com/uc?export=download&id=1ABC123DEF456GHI789" type="video/mp4">
                         <p>Tu navegador no soporta videos HTML5.</p>
                     </video>
@@ -963,7 +1065,7 @@
             <div class="sample-item">
                 <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
                     <div class="notch" aria-hidden="true"></div>
-                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                    <video controls playsinline muted loop preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 600'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4c4a8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8d5c4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad2)'/%3E%3Ccircle cx='200' cy='300' r='40' fill='%23ffffff' opacity='0.8'/%3E%3Cpolygon points='185,285 185,315 215,300' fill='%23d4c4a8'/%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
                         <source src="https://drive.google.com/uc?export=download&id=1DEF456GHI789JKL012" type="video/mp4">
                         <p>Tu navegador no soporta videos HTML5.</p>
                     </video>
@@ -973,7 +1075,7 @@
             <div class="sample-item">
                 <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
                     <div class="notch" aria-hidden="true"></div>
-                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                    <video controls playsinline muted loop preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 600'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4c4a8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8d5c4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad3)'/%3E%3Ccircle cx='200' cy='300' r='40' fill='%23ffffff' opacity='0.8'/%3E%3Cpolygon points='185,285 185,315 215,300' fill='%23d4c4a8'/%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
                         <source src="https://drive.google.com/uc?export=download&id=1GHI789JKL012MNO345" type="video/mp4">
                         <p>Tu navegador no soporta videos HTML5.</p>
                     </video>
@@ -983,7 +1085,7 @@
             <div class="sample-item">
                 <div class="iphone" role="group" aria-label="Vista previa tipo iPhone">
                     <div class="notch" aria-hidden="true"></div>
-                    <video controls playsinline muted loop preload="metadata" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+                    <video controls playsinline muted loop preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 600'%3E%3Cdefs%3E%3ClinearGradient id='grad4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4c4a8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8d5c4;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad4)'/%3E%3Ccircle cx='200' cy='300' r='40' fill='%23ffffff' opacity='0.8'/%3E%3Cpolygon points='185,285 185,315 215,300' fill='%23d4c4a8'/%3E%3C/svg%3E" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
                         <source src="https://drive.google.com/uc?export=download&id=1JKL012MNO345PQR678" type="video/mp4">
                         <p>Tu navegador no soporta videos HTML5.</p>
                     </video>
@@ -1134,6 +1236,20 @@
             if (video) {
                 video.addEventListener('loadedmetadata', function() {
                     video.currentTime = 0.1; // Go to first frame
+                });
+                
+                // Fallback for external videos
+                video.addEventListener('canplay', function() {
+                    if (video.currentTime === 0) {
+                        video.currentTime = 0.1;
+                    }
+                });
+                
+                // Ensure poster is shown when video is paused
+                video.addEventListener('pause', function() {
+                    if (video.currentTime > 0) {
+                        video.currentTime = 0.1;
+                    }
                 });
             }
 
